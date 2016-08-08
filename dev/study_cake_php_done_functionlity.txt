@@ -1,0 +1,18 @@
+
+1.Done with add user functionlity.
+  http://localhost/cakephp326/users/add/
+
+2. Edit functinolity
+http://localhost/cakephp326/users/edit/1
+
+3. View single record 
+http://localhost/cakephp326/users/view/1
+
+4.Delete User.
+
+5.Chnage password of user in his account.
+
+6.Image/pdf file add/edit/delete of file.
+
+7.
+
