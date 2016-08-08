@@ -1,0 +1,8 @@
+
+1.How to upload file with CakePHP functions ?
+
+http://josediazgonzalez.com/2015/12/05/uploading-files-and-images/
+
+2.How to edit file with cakePHP ?
+3.How to custom validation in cakePHP form ?
+4.
