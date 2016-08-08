@@ -10,7 +10,7 @@ http://localhost/cakephp326/users/view/1
 
 4.Delete User.
 
-5.Chnage password of user in his account.
+5.Change password of user in his account.
 
 6.Image/pdf file add/edit/delete of file.
 
