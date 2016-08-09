@@ -1,4 +1,5 @@
 
+
 1.Done with add user functionlity.
   http://localhost/cakephp326/users/add/
 
@@ -15,4 +16,10 @@ http://localhost/cakephp326/users/view/1
 6.Image/pdf file add/edit/delete of file.
 
 7.ajax in cake php 3.0
+
+8.Study how pagination works in cakePHP 3.0. How to change pagination style.
+
+9.Email with cake PHP email library function.
+
+10.
 

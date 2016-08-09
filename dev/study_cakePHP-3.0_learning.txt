@@ -1,4 +1,11 @@
 
+
+How to do change passwors functionlity in cakePHP 3.0
+http://base-syst.com/password-validation-when-changing-password-in-cakephp-3/
+
+
+
+8th August 2016
 --------------------------------------------------------------------------------------------------
 
 INSTALLING COMPOSER
