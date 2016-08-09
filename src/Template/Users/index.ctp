@@ -3,7 +3,16 @@
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
 	<li><?= $this->Html->link(__('Change Password'), ['action' => 'changePassword/6/']) ?></li>
-	<li><?= $this->Html->link(__('Logout'), ['action' => 'logout']) ?></li>
+	<li><?php echo  $this->Html->link(__('Logout'), ['action' => 'logout']); 	
+		$loggedin_user_arr = $this->request->session()->read('Auth');
+		echo $loggedin_user_arr['User']['firstname']." ".$loggedin_user_arr['User']['lastname'];
+		
+		//echo "<pre>";
+		//echo $loggedin_user_arr['User'][id];	
+
+	?></li>
+	<li><?php 			
+	?></li>
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">

@@ -1,0 +1,165 @@
+
+--------------------------------------------------------------------------------------------------
+
+INSTALLING COMPOSER
+
+http://book.cakephp.org/3.0/en/installation.html
+
+Installing Composer:
+
+https://www.dev-metal.com/install-update-composer-windows-7-ubuntu-debian-centos/
+
+First Error:
+
+OCI.dll not found 
+http://pcsupport.about.com/od/findbyerrormessage/a/oci-dll-not-found-missing-error.htm
+
+Second Error:
+
+E:wamp/bin/php/php5.5.12/ext/php_pdo_oci.dll the specified module could not be found.
+
+
+How to execute cakePHP commands from windows command line 
+
+http://nurelm.com/running-cakephp-command-line-tools-in-windows/
+
+
+SETTING UP ENVIRONMENTAL VARIABLE.
+
+
+
+
+E:\wamp\bin\php\php5.5.12
+
+E:wampbinphpphp5.5.12;
+
+Three environmental variable:
+Each variable needs to seperated by semicolen.
+
+
+1.Command console
+
+E:\wamp\www\cakephp326\bin
+
+2.php folder
+
+E:\wamp\bin\php\php5.5.12
+
+3.myswl folder
+
+E:\wamp\bin\mysql\mysql5.6.17\bin
+
+
+http://stackoverflow.com/questions/33369138/in-cake-php-3-0-how-to-rectify-the-index-page-error-after-installing
+
+
+For this error which appears in php error log file
+Fatal error:  Class 'Cake\Mailer\Email' not found in E:\wamp\www\cakephp326\config\bootstrap.php on line 148
+
+WE HAVE TO UPGRADE CAKEPHP 
+
+Run below command and issue get resolved.
+Run this command in root directory.
+
+composer update
+
+
+CRUD OPERATION:-
+
+http://www.startutorial.com/articles/view/cakephp-bake-console-in-windows
+
+Basic below three commands:-
+
+1.cake bake model post
+2.cake bake controller post
+3.cake bake view post
+
+To view that created file, I guess there needs routing:
+
+http://book.cakephp.org/3.0/en/development/routing.html
+
+===================================================================================================================
+
+LEARN :
+
+1.CRUD operation using command line.
+
+Next things to learn:
+
+1. callback functions
+
+beforeFind
+afterFind
+beforeValidate
+afterValidate
+
+
+2. Migrations
+
+Migrations is a plugin supported by the core team that helps you do schema changes in your database by writing PHP files that can be tracked using your version control system.
+
+3. Associations
+4. Query builder
+5. File upload
+6. Email function
+7. Helper function
+8. Component
+
+
+http://book.cakephp.org/2.0/en/models/callback-methods.html
+
+
+http://book.cakephp.org/3.0/en/controllers/components.html
+
+Components are packages of logic that are shared between controllers
+
+3. File Upload:-
+
+http://book.cakephp.org/3.0/en/views/helpers/form.html
+
+---------------------------------------------------------------
+
+Login and Logout functionlity in cakePHP 3.x
+
+http://book.cakephp.org/3.0/en/tutorials-and-examples/blog-auth-example/auth.html
+
+http://book.cakephp.org/3.0/en/controllers/components/authentication.html
+
+http://stackoverflow.com/questions/29545863/login-auth-identify-always-false-on-cakephp-3
+
+http://stackoverflow.com/questions/32690756/declaration-of-userscontrollerbeforefilter-should-be-compatible-with-appcont
+
+--------------------------------------------------------------------------------------------------------------------------------
+This link needs to be login protected.
+
+
+Functionlities:
+
+Admin Login
+Admn Logout
+
+Listing of user's added by admin
+Listing will be accessible to admin
+
+http://localhost/cakephp326/users/
+
+Upload files in cakePHP.
+
+http://josediazgonzalez.com/2015/12/05/uploading-files-and-images/
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

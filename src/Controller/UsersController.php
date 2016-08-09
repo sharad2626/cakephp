@@ -137,6 +137,7 @@ class UsersController extends AppController
         return $this->redirect($this->Auth->logout());
     }
 
+	/*
 	public function changePassword($id = null)
     {
 
@@ -158,8 +159,35 @@ class UsersController extends AppController
 
 		$this->set(compact('user'));
 		$this->set('_serialize', ['user']);
+
+
     
 	}
+
+	*/
+
+
+	public function changePassword()
+    {
+        $user =$this->Users->get($this->Auth->user('id'));  //echo "<pre>"; print_r($user);
+        if (!empty($this->request->data)) {
+            $user = $this->Users->patchEntity($user, [
+                    'old_password'  => $this->request->data['old_password'],
+                    'password'      => $this->request->data['password1'],
+                    'password1'     => $this->request->data['password1'],
+                    'password2'     => $this->request->data['password2']
+                ],
+                ['validate' => 'password']
+            );
+            if ($this->Users->save($user)) {
+                $this->Flash->success('The password is successfully changed');
+                $this->redirect('/users/');
+            } else {
+                $this->Flash->error('There was an error during the save!......');
+            }
+        }
+        $this->set('user',$user);
+    }
 
 
 }
