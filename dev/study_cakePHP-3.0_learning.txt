@@ -1,8 +1,29 @@
 
+http://stackoverflow.com/questions/30218488/update-only-one-field-on-cakephp-3
+
+http://book.cakephp.org/3.0/en/orm/query-builder.html#updating-data
+
+
+tableRegistry class not found error.
+use below link to resolve it.
+
+http://stackoverflow.com/questions/27094959/saving-related-data-in-cakephp-3-controller
+
+----------------
+A1
+
+How to add or update images for user's profile in cakePHP 3.0 
+validation is not working in cakePHP
+
+http://www.codexworld.com/handling-file-uploads-cakephp/
+
+
+
+9th August 2016
+---------------------------------------------------------------------------------------------
 
 How to do change passwors functionlity in cakePHP 3.0
 http://base-syst.com/password-validation-when-changing-password-in-cakephp-3/
-
 
 
 8th August 2016
