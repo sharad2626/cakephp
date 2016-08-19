@@ -1,6 +1,45 @@
 
-http://stackoverflow.com/questions/30218488/update-only-one-field-on-cakephp-3
 
+--------------------------------------------------------------------
+How to chnage timezone of cakephp website
+
+http://stackoverflow.com/questions/30027449/set-timezone-doesnt-change-displayed-time-in-cakephp-3-x
+
+In config/app.php, leave timezone in Datasources array empty :
+
+'Datasources' => [
+    'default' => [
+        /* previous code */
+        'timezone' => '',
+        /* next code */
+    ],
+]
+
+What will be value for this timezone field 
+
+19th August 2016
+------------------------------------------------------------------------------
+
+1.Check how pagination get set.
+
+In cakePHP where or in which file number of records per page get set ?
+
+$paginate varaible needs to be initialized.
+
+public $paginate = [
+        'limit' => 10,
+        'order' => [
+            'Articles.title' => 'asc'
+        ]
+    ];
+
+
+
+
+16th August 2016
+--------------------------------------------------------------------
+
+http://stackoverflow.com/questions/30218488/update-only-one-field-on-cakephp-3
 http://book.cakephp.org/3.0/en/orm/query-builder.html#updating-data
 
 
