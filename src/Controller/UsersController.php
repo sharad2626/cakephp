@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 /**
  * Users Controller
@@ -11,7 +12,16 @@ use Cake\Event\Event;
  */
 class UsersController extends AppController
 {
+	/* pagination variable initialization start */
 
+	public $paginate = [
+        'limit' => 10,
+        'order' => [
+            'Articles.title' => 'asc'
+        ]
+    ];
+
+	/* pagination variable initialisation end  */
     /**
      * Index method
      *
@@ -52,7 +62,61 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
-            if ($this->Users->save($user)) {
+			$result = $this->Users->save($user);
+              
+			if ($result) {
+				
+				/******************************** File upload code starts *****************************************/
+				
+				$record_id=$result->id; //echo $record_id; exit;
+
+				if(!empty($this->request->data['file']['name'])){
+
+					$fileName  = $this->request->data['file']['name'];
+					$uploadPath = 'E:/wamp/www/cakephp326/uploads/files/';
+					$uploadFile = $uploadPath.$fileName;
+				
+					if(move_uploaded_file($this->request->data['file']['tmp_name'],$uploadFile)){
+						
+						$user_id = $result['id'];
+
+						$users = TableRegistry::get('Users');
+						$query = $users->query();
+						$response_update = $query->update()
+						->set(['photo' =>$uploadFile])
+						->where(['id' =>$user_id])
+						->execute();
+
+						/*	
+						$uploadData = $this->Files->newEntity();
+						$uploadData->name = $fileName;
+						$uploadData->path = $uploadPath;
+						$uploadData->created = date("Y-m-d H:i:s");
+						$uploadData->modified = date("Y-m-d H:i:s");
+                        
+						*/
+
+						if($response_update) {
+							$this->Flash->success(__('File has been uploaded and inserted successfully.'));
+						}else{
+							$this->Flash->error(__('Unable to upload file, please try again.'));
+						}
+
+					}else{
+						$this->Flash->error(__('Unable to upload file, please try again.'));
+					}
+
+				}else{
+				
+					$this->Flash->error(__('Please choose a file to upload.'));
+				
+				}
+
+
+
+
+				/******************************* File upload code ends   **************************************/
+
                 $this->Flash->success(__('The user has been saved.'));
                 return $this->redirect(['action' => '/add/']);
             } else {
